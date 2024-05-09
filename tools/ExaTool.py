@@ -31,4 +31,4 @@ class ExaSearchTool:
 		return [ExaSearchTool.search, ExaSearchTool.find_similar, ExaSearchTool.get_contents]
 
 	def _exa():
-		return Exa(api_key=os.environ["EXA"])
+		return Exa(api_key=os.environ["EXA_API_KEY"])
