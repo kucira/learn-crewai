@@ -1,0 +1,24 @@
+document_reader_task:
+  name: Document Reader Task
+  description: Read the input document and extract relevant information
+  agent: document_reader_agent
+  inputs:
+    - name: document_file
+      type: file
+      description: The document file to be read
+
+system_analyst_researcher_task:
+  description: >
+    Use a document reader tool to look up this product document requirement or software requirement document: {document_file}. 
+    The goal is to prepare enough information to make an breakdown Jira task, subtask for each role of software engineer for the product document requirement or software requirement document.
+  expected_output: >
+    All of the Jira task, subtask for each role of software engineer for the product document requirement or software requirement document.
+
+
+software_engineer_analyst_task:
+  description: >
+    Take {document_file}'s product document requirement or software requirement, analyze it, 
+    and provide a sequence diagram using format website swimlines.io,
+    including a test case for positive and negative test case.
+  expected_output: >
+    A nicely formatted sequence diagram including all of the software development workflow, write positive and negative test case, and also pseudo code.
